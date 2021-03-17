@@ -14,7 +14,7 @@ app.engine(
   }),
 );
 app.set('view engine', '.hbs');
-const port = 8000;
+const port = 7999;
 
 const client = new smartcar.AuthClient({
   clientId: process.env.CLIENT_ID,
@@ -67,4 +67,4 @@ app.get('/vehicle', function(req, res) {
     });
 });
 
-app.listen(port, () => console.log(`Listening on port ${port}`));
+app.listen(port, "0.0.0.0", () => console.log(`Listening on port ${port}`));
