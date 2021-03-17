@@ -1,5 +1,6 @@
 'use strict';
 
+const util = require('util');
 const express = require('express');
 const exphbs = require('express-handlebars');
 const smartcar = require('smartcar');
@@ -61,6 +62,7 @@ app.get('/vehicle', function(req, res) {
     .then(function(info) {
       res.render('vehicle', {
         info: info,
+        token: access.accessToken
       });
     });
 });
